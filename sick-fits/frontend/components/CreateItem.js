@@ -34,7 +34,7 @@ class CreateItem extends Component {
     image: '',
     largeImage: '',
     price: 0,
-  }
+  };
   handleChange = e => {
     const { name, type, value } = e.target;
     const val = type === 'number' ? parseFloat(value, 10) : value;
@@ -48,7 +48,7 @@ class CreateItem extends Component {
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dbxdghtq3/image/upload',
-      { 
+      {
         method: 'POST',
         body: data
       }
@@ -79,7 +79,7 @@ class CreateItem extends Component {
           }}>
             <ErrorMessage error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
-            <label htmlFor="file">
+              <label htmlFor="file">
                 Image
               <input
                   type="file"
